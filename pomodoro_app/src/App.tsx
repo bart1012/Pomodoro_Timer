@@ -1,6 +1,5 @@
 import './App.css'
 import Timer from './timer/Timer.tsx'
-import './colourschemes.css'
 import { TimerProvider } from './timer/timerContext.tsx'
 import TimerSettings from './timer/TimerSettings.tsx'
 import { TaskProvider } from './tasks/taskContext.tsx'
