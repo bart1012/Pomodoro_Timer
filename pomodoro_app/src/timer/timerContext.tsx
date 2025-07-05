@@ -104,7 +104,7 @@ export function TimerProvider({ children }: { children: any }) {
 
             }
 
-        }, 5);
+        }, 1000);
 
     }
 
