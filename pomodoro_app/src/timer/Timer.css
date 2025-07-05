@@ -1,0 +1,64 @@
+#timer-controls{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+#timer-controls button{
+ flex: 1 1 auto;
+}
+
+#timer{
+    font-size: 8rem;
+    margin: 2rem 0;
+    color: white
+}
+
+#link-timer-btn{
+    border-radius: 8px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    justify-content: center ;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.custom-checkmark {
+    height: 20px;
+    width: 20px;
+    background-color: rgba(0,0,0,0.25);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.hidden-checkbox:checked + .custom-checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+
