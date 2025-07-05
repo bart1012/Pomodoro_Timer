@@ -4,6 +4,7 @@ import { useTasks } from "./taskContext";
 import './tasks.css'
 import AddTaskForm from "./AddTaskForm";
 import { useTimer } from "../timer/timerContext";
+import type { Task } from "../types";
 
 
 export default function TaskList() {
@@ -20,7 +21,7 @@ export default function TaskList() {
 
     return (<>
         <ul className="task-list">
-            {tasks.map((item) => (
+            {tasks.map((item : Task) => (
                 <li
                     style={{ cursor: "pointer" }}
                     key={item.id}

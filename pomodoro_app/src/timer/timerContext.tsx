@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
 import { useTasks } from '../tasks/taskContext';
-import type { Task } from '../types';
+import type { Task, TimerContextType } from '../types';
 
-const TimerContext = createContext({});
+const TimerContext = createContext<TimerContextType | undefined>(undefined);
 
-export function useTimer() {
-    return useContext(TimerContext);
+export function useTimer(): TimerContextType {
+    const context = useContext(TimerContext);
+    if (!context) {
+        throw new Error('useTimer must be used within a TimerProvider');
+    }
+    return context;
 }
 
 export function TimerProvider({ children }: { children: any }) {
@@ -68,7 +72,7 @@ export function TimerProvider({ children }: { children: any }) {
                 timeRef.current -= 1;
                 setTime(timeRef.current);
                 if (activeTask && isTaskLinked && currentStage === 'work') {
-                    activeTaskTime.current = activeTaskTime.current - 1;
+                    activeTaskTime.current = activeTaskTime.current ? activeTaskTime.current - 1 : activeTaskTime.current;
                     dispatch({
                         type: 'edit',
                         payload: {
