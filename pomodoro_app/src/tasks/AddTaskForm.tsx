@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './tasks.css';
 import { useTasks } from './taskContext';
-import type { Action } from '../types';
 
 
 type AddTaskFormProps = {

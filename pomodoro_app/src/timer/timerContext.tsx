@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, createContext, useContext } from 'react';
+import  { useState, useEffect, useRef, createContext, useContext } from 'react';
 import { useTasks } from '../tasks/taskContext';
 import type { Task, TimerContextType } from '../types';
 
@@ -15,7 +15,7 @@ export function useTimer(): TimerContextType {
 export function TimerProvider({ children }: { children: any }) {
     const { dispatch } = useTasks();
     const [workTime, setWorkTime] = useState<number>(25 * 60);
-    const [userWorkTime, setUserWorkTime] = useState<number>(25 * 60);
+    const [, setUserWorkTime] = useState<number>(25 * 60);
     const [breakTime, setBreakTime] = useState<number>(5 * 60);
     const [longBreakTime, setLongBreakTime] = useState<number>(15 * 60);
     const [time, setTime] = useState<number>(workTime);
@@ -27,7 +27,6 @@ export function TimerProvider({ children }: { children: any }) {
     const activeTaskTime = useRef<number | null | undefined>(null);
     const [currentStage, setCurrentStage] = useState<'work' | 'break' | 'long-break'>('work');
     const intervalRef = useRef<number | undefined>(undefined);
-    const { tasks } = useTasks();
 
 
     useEffect(() => {

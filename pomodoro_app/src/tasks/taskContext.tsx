@@ -1,5 +1,4 @@
-import { createContext, useContext, useReducer, useState, type Dispatch, type ReactNode } from "react";
-import type { Task } from '../types.ts';
+import { createContext, useContext, useReducer,  type ReactNode } from "react";
 import taskReducer from "./taskReducer.ts";
 
 

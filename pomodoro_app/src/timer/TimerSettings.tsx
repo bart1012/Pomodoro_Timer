@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './timerSettings.css';
 import { useTimer } from './timerContext';
 import '../colourSchemes.css'

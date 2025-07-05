@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTimer } from "../timer/timerContext";
 import type { Task } from "../types";
-import type { Time, TimerContextType } from "../types";
+import type { Time} from "../types";
 import { useTasks } from "./taskContext";
 import './tasks.css'
 
